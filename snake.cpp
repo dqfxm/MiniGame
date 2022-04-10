@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include <conio.h>
+//#include <conio.h>
 #include <cmath>
 #include <windows.h>
 using namespace std;
