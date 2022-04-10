@@ -4,29 +4,29 @@
 #include<windows.h> //SLEEP函数
 struct Player //玩家结构体，并初始化player
 {undefined
-char name[21];
-int attack;
-int defense;
-int health;
-long int max_health;
-int level;
-int exp;
-int range_exp;
-long int max_exp;
+    char name[21];
+    int attack;
+    int defense;
+    int health;
+    long int max_health;
+    int level;
+    int exp;
+    int range_exp;
+    long int max_exp;
 } player= {"勇者",50,40,100,100,1,0,0,100};
 struct Enemy //怪的结构体,并初始化各种怪
 {undefined
-char name[20];
-char wupin[12];
-int attack;
-int defense;
-int health;
-int money;
-long int exp;
-int wupin_sign;
-int wupinpro;
-int double_attack;
-int miss;
+    char name[20];
+    char wupin[12];
+    int attack;
+    int defense;
+    int health;
+    int money;
+    long int exp;
+    int wupin_sign;
+    int wupinpro;
+    int double_attack;
+    int miss;
 } strongman= {"森林巨人","黄金圣衣",40,50,350,200,100,1,2,1,0},
 witch= {"森林女巫","银甲",25,15,100,50,50,2,2,1,1},
 xiyi= {"森林蜥蜴","铁甲",18,10,50,30,35,3,3,2,2},
@@ -64,22 +64,22 @@ void SlowDisplay(char *);
 int main()
 {undefined
  
-int i=0,j=0,k=0;
-char player_name[21];
-Sleep(1000);
-printf("--------------------------欢迎来到 [苍穹世界] 2.2 测试版-----------------------\n\n\n");
-//如果想使用外挂，名字请输入：“圣战斗士 ”。
-Sleep(1000);
-printf("这里是苍穹世界! 雅莉萨斯国的罗茜公主被陌生人绑架了!\n\n\n 伟大的勇者啊~拿起你们的武器,营救公主!\n\n\n输入你的名字: (20个字符)\n\n\n");
-scanf("%s",player_name);
-strncpy(player.name,player_name,20);
-if(strcmp(player.name,"圣战斗士")==0)
-{undefined
-printf("\n\n\n封印多年的圣剑血统啊!你终于觉醒了!\n\n\n圣战斗士，你成为了天选之人，请你救出公主吧！\n\n\n");
-player.attack=999;
-player.defense=999;
-player.health=9999;
-player.max_health=9999;
+    int i=0,j=0,k=0;
+    char player_name[21];
+    Sleep(1000);
+    printf("--------------------------欢迎来到 [苍穹世界] 2.2 测试版-----------------------\n\n\n");
+    //如果想使用外挂，名字请输入：“圣战斗士 ”。
+    Sleep(1000);
+    printf("这里是苍穹世界! 雅莉萨斯国的罗茜公主被陌生人绑架了!\n\n\n 伟大的勇者啊~拿起你们的武器,营救公主!\n\n\n输入你的名字: (20个字符)\n\n\n");
+    scanf("%s",player_name);
+    strncpy(player.name,player_name,20);
+    if(strcmp(player.name,"圣战斗士")==0)
+    {undefined
+    printf("\n\n\n封印多年的圣剑血统啊!你终于觉醒了!\n\n\n圣战斗士，你成为了天选之人，请你救出公主吧！\n\n\n");
+    player.attack=999;
+    player.defense=999;
+    player.health=9999;
+    player.max_health=9999;
 }
 getchar();
  
@@ -89,195 +89,195 @@ return 0;
  
 int SuiJi()
 {undefined
-srand((unsigned)time(NULL));
-return rand()%10;
+    srand((unsigned)time(NULL));
+    return rand()%10;
 }
  
 int SuiJi100()
 {undefined
-srand((unsigned)time(NULL));
-return rand()%100;
+    srand((unsigned)time(NULL));
+    return rand()%100;
 }
  
 void ChooseWupin() //选择物品 并使用
 {undefined
-printf("物品: 1,止血草%d个 2,急救包%d个 3,云南白药%d个 4,超级云南白药%d个 5,手雷%d个 6,毒标%d个 7,手抛式原子弹%d个 8,经验草%d个 9,经验包%d个 10,经验石%d个 11,巨人晶石%d个 0,返回\n\n\n",cao,jijiubao,baiyao,superbaiyao,boom,dubiao,atom_boom,jingyancao,jingyanbao,jingyanshi,strongman_arm);
-switch(scanf("%d",&choose_number),choose_number)
-{undefined
-case 1:
-if(cao>0)
-{undefined
-printf("使用止血草,HP增加60\n\n\n");
-cao--;
-if(player.health+60>player.max_health)player.health=player.max_health;
-else player.health+=60;
-}
-else printf("没有止血草了\n\n\n");
-break;
-case 2:
-if(jijiubao>0)
-{undefined
-printf("使用急救包,HP增加80\n\n\n");
-jijiubao--;
-if(player.health+80>player.max_health)player.health=player.max_health;
-else player.health+=80;
-}
-else printf("没有急救包了\n\n\n");
-break;
-case 3:
-if(baiyao>0)
-{undefined
-printf("使用云南白药,HP增加120\nz\n\n");
-baiyao--;
-if(player.health+120>player.max_health)player.health=player.max_health;
-else player.health+=120;
-}
-else printf("没有云南白药了\n\n\n");
-break;
-case 4:
-if(superbaiyao>0)
-{undefined
-printf("使用超级云南白药,HP增加200\n\n\n");
-superbaiyao--;
-if(player.health+200>player.max_health)player.health=player.max_health;
-else player.health+=200;
-}
-else printf("没有超级云南白药了\n\n\n");
-break;
-case 5:
-if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
-{undefined
-if(boom>0)
-{undefined
-printf("使用手雷,敌人HP减少100\n\n\n");
-boom--;
-guai.health-=100;
-AttackResult();
-}
-}
-else printf("非战斗状态,不能使用手雷!\n\n\n");
-break;
-case 6:
-if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
-{undefined
-if(dubiao>0)
-{undefined
-printf("使用毒标,敌人HP减少200\n\n\n");
-dubiao--;
-guai.health-=200;
-AttackResult();
-}
-}
-else printf("非战斗状态,不能使用毒标!\n\n\n");
-break;
-case 7:
-if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
-{undefined
-if(atom_boom>0)
-{undefined
-printf("使用手抛式原子弹,敌人HP减少666666666\n\n\n");
-atom_boom--;
-guai.health-=666666666;
-AttackResult();
-}
-}
-else printf("非战斗状态,不能使用手抛式原子弹!\n\n\n");
-break;
-case 8:
-if(jingyancao>0 && player.level<1000)
-{undefined
- 
-printf("使用经验草,等级增加10级\n\n\n");
-jingyancao--;
-player.level+=10;
-printf("等级：%d\n",player.level);
-}
-else    if(jingyancao<1)
-{undefined
-printf("没有经验草了\n\n\n");
-}
-else printf("等级超过45级,修为太高，无法使用。\n\n\n");
-break;
-case 9:
-if(jingyanbao>0 && player.level<1000)
-{undefined
-if(player.level>44&&player.level<1000)
-{undefined
-int sheng;
-sheng=45-player.level;
-player.level+=sheng;
-printf("使用经验包,等级增加%d级",sheng);
-printf("等级：%d\n",player.level);
-}
-else
-{undefined
- 
-printf("使用经验包,等级增加2级\n\n\n");
-jingyanbao--;
-player.level+=2;
-printf("等级：%d\n",player.level);
-}
-}
-else if(jingyanbao<1)
-{undefined
-printf("没有经验包了");
-}
-else printf("等级超过45级,修为太高，无法使用。\n\n\n");
-break;
-case 10:
-if(jingyanshi>0 && player.level<1000)
-{undefined
-if(player.level>42&&player.level<1000)
-{undefined
-int sheng;
-sheng=45-player.level;
-player.level+=sheng;
-printf("使用经验石,等级增加%d级\n",sheng);
-printf("等级：%d\n",player.level);
-}
-else
-{undefined
-printf("使用经验石,等级增加10级\n");
-jingyanshi--;
-player.level+=10;
-}
-}
-else if(jingyanshi<1)
-{undefined
-printf("没有经验石了\n\n\n");
-}
-else printf("等级超过45级,修为太高，无法使用。\n\n\n");
-break;
-case 11:
-if(strongman_arm>0 && player.level<10000)
-{undefined
-if(player.level>29&&player.level<10000)
-{undefined
-int sheng;
-sheng=45-player.level;
-player.level+=sheng;
-printf("使用巨人晶石,等级增加%d级",sheng);
-printf("等级：%d\n",player.level);
-}
-else
-{undefined
-printf("使用巨人晶石,等级增加16级\n\n\n");
-strongman_arm--;
-player.level+=16;
-printf("等级：%d\n",player.level);
-}
-}
-else if(strongman_arm<1)
-{undefined
-printf("没有巨人晶石了。\n\n\n");
-}
-else printf("等级超过45级,修为太高，无法使用。\n\n\n");
-break;
-case 0:
-break;
-default:
-printf("ChooseWupin error!\n\n\n");
-}
+    printf("物品: 1,止血草%d个 2,急救包%d个 3,云南白药%d个 4,超级云南白药%d个 5,手雷%d个 6,毒标%d个 7,手抛式原子弹%d个 8,经验草%d个 9,经验包%d个 10,经验石%d个 11,巨人晶石%d个 0,返回\n\n\n",cao,jijiubao,baiyao,superbaiyao,boom,dubiao,atom_boom,jingyancao,jingyanbao,jingyanshi,strongman_arm);
+    switch(scanf("%d",&choose_number),choose_number)
+    {undefined
+    case 1:
+    if(cao>0)
+    {undefined
+    printf("使用止血草,HP增加60\n\n\n");
+    cao--;
+    if(player.health+60>player.max_health)player.health=player.max_health;
+    else player.health+=60;
+    }
+    else printf("没有止血草了\n\n\n");
+    break;
+    case 2:
+    if(jijiubao>0)
+    {undefined
+    printf("使用急救包,HP增加80\n\n\n");
+    jijiubao--;
+    if(player.health+80>player.max_health)player.health=player.max_health;
+    else player.health+=80;
+    }
+    else printf("没有急救包了\n\n\n");
+    break;
+    case 3:
+    if(baiyao>0)
+    {undefined
+    printf("使用云南白药,HP增加120\nz\n\n");
+    baiyao--;
+    if(player.health+120>player.max_health)player.health=player.max_health;
+    else player.health+=120;
+    }
+    else printf("没有云南白药了\n\n\n");
+    break;
+    case 4:
+    if(superbaiyao>0)
+    {undefined
+    printf("使用超级云南白药,HP增加200\n\n\n");
+    superbaiyao--;
+    if(player.health+200>player.max_health)player.health=player.max_health;
+    else player.health+=200;
+    }
+    else printf("没有超级云南白药了\n\n\n");
+    break;
+    case 5:
+    if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
+    {undefined
+    if(boom>0)
+    {undefined
+    printf("使用手雷,敌人HP减少100\n\n\n");
+    boom--;
+    guai.health-=100;
+    AttackResult();
+    }
+    }
+    else printf("非战斗状态,不能使用手雷!\n\n\n");
+    break;
+    case 6:
+    if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
+    {undefined
+    if(dubiao>0)
+    {undefined
+    printf("使用毒标,敌人HP减少200\n\n\n");
+    dubiao--;
+    guai.health-=200;
+    AttackResult();
+    }
+    }
+    else printf("非战斗状态,不能使用毒标!\n\n\n");
+    break;
+    case 7:
+    if(battle) //在战斗中(battle=1),否则(battle=0)不能使用攻击性物品
+    {undefined
+    if(atom_boom>0)
+    {undefined
+    printf("使用手抛式原子弹,敌人HP减少666666666\n\n\n");
+    atom_boom--;
+    guai.health-=666666666;
+    AttackResult();
+    }
+    }
+    else printf("非战斗状态,不能使用手抛式原子弹!\n\n\n");
+    break;
+    case 8:
+    if(jingyancao>0 && player.level<1000)
+    {undefined
+    
+    printf("使用经验草,等级增加10级\n\n\n");
+    jingyancao--;
+    player.level+=10;
+    printf("等级：%d\n",player.level);
+    }
+    else    if(jingyancao<1)
+    {undefined
+    printf("没有经验草了\n\n\n");
+    }
+    else printf("等级超过45级,修为太高，无法使用。\n\n\n");
+    break;
+    case 9:
+    if(jingyanbao>0 && player.level<1000)
+    {undefined
+    if(player.level>44&&player.level<1000)
+    {undefined
+    int sheng;
+    sheng=45-player.level;
+    player.level+=sheng;
+    printf("使用经验包,等级增加%d级",sheng);
+    printf("等级：%d\n",player.level);
+    }
+    else
+    {undefined
+    
+    printf("使用经验包,等级增加2级\n\n\n");
+    jingyanbao--;
+    player.level+=2;
+    printf("等级：%d\n",player.level);
+    }
+    }
+    else if(jingyanbao<1)
+    {undefined
+    printf("没有经验包了");
+    }
+    else printf("等级超过45级,修为太高，无法使用。\n\n\n");
+    break;
+    case 10:
+    if(jingyanshi>0 && player.level<1000)
+    {undefined
+    if(player.level>42&&player.level<1000)
+    {undefined
+    int sheng;
+    sheng=45-player.level;
+    player.level+=sheng;
+    printf("使用经验石,等级增加%d级\n",sheng);
+    printf("等级：%d\n",player.level);
+    }
+    else
+    {undefined
+    printf("使用经验石,等级增加10级\n");
+    jingyanshi--;
+    player.level+=10;
+    }
+    }
+    else if(jingyanshi<1)
+    {undefined
+    printf("没有经验石了\n\n\n");
+    }
+    else printf("等级超过45级,修为太高，无法使用。\n\n\n");
+    break;
+    case 11:
+    if(strongman_arm>0 && player.level<10000)
+    {undefined
+    if(player.level>29&&player.level<10000)
+    {undefined
+    int sheng;
+    sheng=45-player.level;
+    player.level+=sheng;
+    printf("使用巨人晶石,等级增加%d级",sheng);
+    printf("等级：%d\n",player.level);
+    }
+    else
+    {undefined
+    printf("使用巨人晶石,等级增加16级\n\n\n");
+    strongman_arm--;
+    player.level+=16;
+    printf("等级：%d\n",player.level);
+    }
+    }
+    else if(strongman_arm<1)
+    {undefined
+    printf("没有巨人晶石了。\n\n\n");
+    }
+    else printf("等级超过45级,修为太高，无法使用。\n\n\n");
+    break;
+    case 0:
+    break;
+    default:
+    printf("ChooseWupin error!\n\n\n");
+    }
 }
  
 int AttackResult() //攻击结果:判断是否获胜 是否获得物品 和 是否升级
